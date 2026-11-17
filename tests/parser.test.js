@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { parseList, allUnits, normalizeName } = require('../js/parser.js');
 
-const LIST = fs.readFileSync(path.join(__dirname, 'fixtures', 'templari.txt'), 'utf8');
+const LIST = fs.readFileSync(path.join(__dirname, '..', 'data', 'lista-templari.txt'), 'utf8');
 
 test('intestazione', () => {
   const r = parseList(LIST);

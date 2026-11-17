@@ -133,7 +133,7 @@
   backBtn.addEventListener('click', function () {
     var parts = location.hash.replace(/^#\/?/, '').split('/');
     if (parts[0] === 'army' && parts[2] === 'u') go('#/army/' + parts[1]);
-    else go('#/');
+    else go('#/liste');
   });
   window.addEventListener('hashchange', route);
 
@@ -142,11 +142,16 @@
     dbReady.then(function () {
       if (parts[0] === 'army' && parts[1]) {
         var army = getArmy(parts[1]);
-        if (!army) { toast('Lista non trovata.'); go('#/'); return; }
+        if (!army) { toast('Lista non trovata.'); go('#/liste'); return; }
         if (parts[2] === 'u' && parts[3] != null) renderUnit(army, parseInt(parts[3], 10));
         else renderArmy(army);
-      } else {
+      } else if (parts[0] === 'liste') {
         renderHome();
+      } else {
+        // avvio: apre direttamente l'armata più recente
+        var lists = getLists();
+        if (lists.length) location.replace('#/army/' + lists[0].id);
+        else renderHome();
       }
       app.focus({ preventScroll: true });
     });
@@ -173,7 +178,6 @@
     html += '<div class="row" style="margin-top:10px">';
     html += '<button class="btn primary" id="btn-parse" type="button">Analizza e salva</button>';
     html += '<label class="btn file-label">Importa .txt<input type="file" id="file-input" accept=".txt,text/plain"></label>';
-    html += '<button class="btn" id="btn-example" type="button">Esempio fittizio</button>';
     html += '</div></section>';
 
     html += '<h2 class="section-title">Liste salvate</h2>';
@@ -199,11 +203,6 @@
       reader.onload = function () { draft = String(reader.result); analyze(draft); };
       reader.onerror = function () { toast('Impossibile leggere il file.'); };
       reader.readAsText(f);
-    });
-    document.getElementById('btn-example').addEventListener('click', function () {
-      fetch('data/esempio-fittizio.txt').then(function (r) { return r.text(); })
-        .then(function (t) { draft = t; analyze(t); })
-        .catch(function () { toast('Esempio non disponibile offline.'); });
     });
     app.querySelectorAll('[data-del]').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -375,7 +374,6 @@
     html += '<div class="ds-head"><h2>' + esc(u.name) + '</h2><div class="sub">' + esc(sub.join(' · ')) + '</div></div>';
     html += '<div class="ds-body">';
 
-    if (e && e._esempio) html += '<div class="notice warn">Dati FITTIZI di esempio, solo per mostrare una scheda compilata.</div>';
     if (!filled) {
       html += '<div class="notice warn">Datasheet non ancora compilata in <code>data/datasheets.json</code>. Sotto trovi i dati presi dalla lista; per le regole usa il bottone Wahapedia.</div>';
     }
@@ -402,7 +400,9 @@
 
     if (u.enhancements.length) {
       html += '<h3>Enhancement</h3>' + u.enhancements.map(function (x) {
-        return '<div class="ability"><b>' + esc(x.name) + '</b>' + (x.detail ? '<span class="muted small">' + esc(x.detail) + '</span>' : '') + '</div>';
+        var info = (db.enhancements || {})[x.name] || {};
+        return '<div class="ability"><b>' + esc(x.name) + '</b><span class="muted small">' + esc(info.detail || x.detail || '') + '</span>' +
+          (info.text ? '<p>' + esc(info.text) + '</p>' : '') + '</div>';
       }).join('');
     }
 
@@ -411,10 +411,22 @@
 
     var ab = (e && e.abilities) || {};
     var abHtml = '';
-    if (ab.core && ab.core.length) abHtml += '<div class="profile-name">Core</div>' + abilitiesBlock(ab.core);
-    if (ab.faction && ab.faction.length) abHtml += '<div class="profile-name">Fazione</div>' + abilitiesBlock(ab.faction);
-    if (ab.uniche && ab.uniche.length) abHtml += '<div class="profile-name">Uniche</div>' + abilitiesBlock(ab.uniche);
+    function namesOrBlocks(list) {
+      // abilità senza testo (solo nome) come etichette, altrimenti blocchi completi
+      if (list.every(function (a) { return typeof a === 'string' || !a.text; })) {
+        return kwBlock(list.map(function (a) { return typeof a === 'string' ? a : a.name; }));
+      }
+      return abilitiesBlock(list);
+    }
+    if (ab.core && ab.core.length) abHtml += '<div class="profile-name">Core</div>' + namesOrBlocks(ab.core);
+    if (ab.faction && ab.faction.length) abHtml += '<div class="profile-name">Fazione</div>' + namesOrBlocks(ab.faction);
+    var uniche = (ab.uniche || []).filter(function (a) { return !a.tipo; });
+    var wargearAb = (ab.uniche || []).filter(function (a) { return a.tipo === 'Wargear'; });
+    var info = (ab.uniche || []).filter(function (a) { return a.tipo === 'Info'; });
+    if (uniche.length) abHtml += '<div class="profile-name">Uniche</div>' + abilitiesBlock(uniche);
+    if (wargearAb.length) abHtml += '<div class="profile-name">Wargear</div>' + abilitiesBlock(wargearAb);
     html += '<h3>Abilities</h3>' + (abHtml || '<p class="empty">Nessuna abilità inserita.</p>');
+    if (info.length) html += '<h3>Altre informazioni</h3>' + abilitiesBlock(info);
 
     // equipaggiamento dalla lista
     html += '<h3>Equipaggiamento (dalla lista)</h3><ul class="wargear-list">';
@@ -448,7 +460,12 @@
 
   // ---------- avvio ----------
   applyTheme(getTheme());
-  route();
+  // primo avvio: importa la lista inclusa nell'app
+  (getLists().length ? Promise.resolve() : fetch('data/lista-templari.txt')
+    .then(function (r) { if (!r.ok) throw new Error(); return r.text(); })
+    .then(function (t) { var p = P.parseList(t); if (p.ok) saveList(t, p); })
+    .catch(function () {})
+  ).then(route);
 
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     window.addEventListener('load', function () {

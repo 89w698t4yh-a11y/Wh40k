@@ -4,9 +4,21 @@ PWA statica (HTML + CSS + JS vanilla, **nessun build step**) che, da una lista d
 Warhammer 40.000 esportata da **New Recruit**, raggruppa le unità e mostra la datasheet di ciascuna.
 Funziona offline e si installa sull'iPhone con "Aggiungi alla schermata Home".
 
-> Progetto non ufficiale per uso personale. Nel repository **non c'è nessun testo-regole di Games Workshop**:
-> i dati delle datasheet li inserisci tu in `data/datasheets.json`. Per ogni unità c'è il bottone
-> "Apri su Wahapedia" come riferimento.
+> Progetto non ufficiale per uso personale, dedicato alla lista **Templari (Black Templars, 1.995 pt)**.
+> Le datasheet delle 11 unità della lista sono già incluse in `data/datasheets.json`, lette da
+> Wahapedia (11ª edizione) il 17/11/2026: statline, invulnerabile, solo le armi equipaggiate
+> nella lista, abilità, keyword e l'enhancement *Fervent Exemplars*.
+> Contengono testo-regole di Games Workshop: tieni il repository **privato** se puoi
+> (vedi "Pubblicare" sotto).
+
+All'apertura l'app carica da sola la lista Templari e mostra subito l'armata: tocca un'unità per
+la sua scheda. Puoi comunque incollare altre liste (freccia indietro → *Liste*): verranno
+raggruppate, ma le unità non presenti nel file dati mostreranno solo nome, punti, equipaggiamento
+e il bottone Wahapedia.
+
+**Differenza segnalata:** nella tua lista Gladiator Lancer e Repulsor Executioner hanno un
+*Multi-melta*, che nella datasheet 11ª ed. di Wahapedia non c'è. Il suo profilo è preso dal
+Land Raider Redeemer e marcato con ⚠ nella scheda: verifica la lista in New Recruit.
 
 ## Struttura
 
@@ -18,10 +30,10 @@ js/app.js               interfaccia, liste salvate (localStorage), datasheet
 manifest.json           manifest PWA (standalone, icone, colori)
 service-worker.js       cache offline (app shell + dati)
 data/datasheets.json    le tue datasheet (modello dati sotto)
-data/esempio-fittizio.txt  lista FITTIZIA per vedere una scheda compilata
+data/lista-templari.txt    la lista Black Templars (caricata al primo avvio, usata dai test)
 icons/                  icone (SVG + PNG, apple-touch-icon 180×180)
 tools/seed.js           aggiunge a datasheets.json le unità mancanti di una lista
-tests/                  test del parser (node --test) + la lista Black Templars di prova
+tests/                  test del parser (node --test)
 ```
 
 ## Uso
@@ -65,6 +77,11 @@ sotto-punti `◦` (i profili dei modelli); se non ce ne sono, è 1.
 
 ## Pubblicare su GitHub Pages
 
+Con l'account GitHub gratuito, Pages funziona solo su repository **pubblici**, e allora chiunque
+vedrebbe anche il testo-regole in `data/datasheets.json`. Alternative che pubblicano gratis da un
+repository **privato**: Netlify o Cloudflare Pages (collega il repo, nessun comando di build,
+cartella di output `/`). Con GitHub Pages:
+
 1. Fai il push del repository su GitHub.
 2. **Settings → Pages → Build and deployment**: *Source* = "Deploy from a branch",
    branch `main` (o quello che usi), cartella `/ (root)` → **Save**.
@@ -100,7 +117,6 @@ di Safari o rimuovi l'app, le liste salvate vengono perse: tieni una copia dei .
     "Crusader Squad": {
       "name": "Crusader Squad",
       "aliases": [],
-      "fromList": { "points": [{ "models": 20, "points": 305 }], "wargear": ["Bolt Pistol", "…"] },
       "statline": { "M": "", "T": "", "Sv": "", "Inv": "", "W": "", "Ld": "", "OC": "" },
       "ranged": [ { "name": "", "Range": "", "A": "", "BS": "", "S": "", "AP": "", "D": "", "note": "" } ],
       "melee":  [ { "name": "", "A": "", "WS": "", "S": "", "AP": "", "D": "", "note": "" } ],
@@ -122,9 +138,8 @@ di Safari o rimuovi l'app, le liste salvate vengono perse: tieni una copia dei .
   evidenziarla (anche per prefisso, es. "Plasma Pistol – supercharge").
 - Se `wahapediaUrl` è vuoto, il bottone apre una ricerca di quel nome sul sito Wahapedia
   (modello configurabile in `meta.wahapediaSearchUrl`, `{q}` = nome unità).
-- Le voci con `"_esempio": true` sono **fittizie**. Puoi cancellarle quando non ti servono più
-  (e togliere `data/esempio-fittizio.txt`).
-- I punti mostrati vengono sempre dalla lista; `fromList` è solo un promemoria.
+- `enhancements` (al livello di `units`) contiene il testo degli enhancement, per nome.
+- I punti mostrati vengono sempre dalla lista.
 
 **Aggiungere le unità di una nuova lista** (crea voci vuote, non tocca quelle esistenti):
 
@@ -143,6 +158,6 @@ l'iPhone riceve la nuova versione dell'app (a volte servono due aperture).
 node --test
 ```
 
-I test usano la lista Black Templars in `tests/fixtures/templari.txt`: intestazione,
+I test usano la lista Black Templars in `data/lista-templari.txt`: intestazione,
 3 gruppi leader+bodyguard, 5 other datasheets, quantità del wargear, n° modelli, punti totali
 (1.995) e robustezza a formattazioni diverse.
