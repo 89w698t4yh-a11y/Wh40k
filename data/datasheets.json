@@ -1,56 +1,58 @@
 {
   "meta": {
     "edition": "11",
-    "dataYear": 2026,
+    "source": "Wahapedia, 11ª edizione (wahapedia.ru/wh40k11ed), letto il 2026-11-17",
     "version": "2026-11-17",
-    "note": "Dati inseriti manualmente dall'utente. Nessun testo-regole di Games Workshop è incluso nel repository. Le voci con \"_esempio\": true sono FITTIZIE e servono solo a mostrare una scheda compilata.",
+    "list": "Templari (1.995 Points) – Black Templars",
     "wahapediaSearchUrl": "https://www.google.com/search?q=site%3Awahapedia.ru+%22{q}%22"
   },
+  "enhancements": {
+    "Fervent Exemplars": {
+      "detail": "Upgrade · 10 pt · Marshal's Household",
+      "text": "Solo unità SWORD BRETHREN SQUAD. Questa unità ha +1 ai tiri di carica."
+    }
+  },
   "units": {
-    "Guardiano d'Esempio": {
-      "_esempio": true,
-      "name": "Guardiano d'Esempio",
-      "fromList": {
-        "points": [
-          {
-            "models": 1,
-            "points": 90
-          }
-        ],
-        "wargear": [
-          "Pistola Dimostrativa",
-          "Lama di Prova"
-        ]
-      },
+    "High Marshal Helbrecht": {
+      "name": "High Marshal Helbrecht",
       "statline": {
         "M": "6\"",
-        "T": "4",
-        "Sv": "3+",
-        "Inv": "5+",
-        "W": "5",
+        "T": "5",
+        "Sv": "2+",
+        "W": "6",
         "Ld": "6+",
-        "OC": "1"
+        "OC": "3",
+        "Inv": "4+"
       },
       "ranged": [
         {
-          "name": "Pistola Dimostrativa",
-          "Range": "12\"",
-          "A": "1",
-          "BS": "3+",
-          "S": "4",
+          "name": "Ferocity",
+          "Range": "24\"",
+          "A": "2",
+          "BS": "2+",
+          "S": "5",
           "AP": "-1",
-          "D": "1",
-          "note": "Pistol"
+          "D": "2",
+          "note": "anti-infantry 4+, Devastating Wounds"
         }
       ],
       "melee": [
         {
-          "name": "Lama di Prova",
-          "A": "5",
+          "name": "Sword of the High Marshals - Strike",
+          "A": "6",
           "WS": "2+",
-          "S": "5",
-          "AP": "-2",
-          "D": "2",
+          "S": "9",
+          "AP": "-3",
+          "D": "3",
+          "note": ""
+        },
+        {
+          "name": "Sword of the High Marshals - Sweep",
+          "A": "12",
+          "WS": "2+",
+          "S": "6",
+          "AP": "-3",
+          "D": "1",
           "note": ""
         }
       ],
@@ -58,62 +60,335 @@
         "core": [
           {
             "name": "Leader",
-            "text": "Testo segnaposto: qui va il riassunto della regola, scritto da te."
+            "text": ""
           }
         ],
         "faction": [
           {
-            "name": "Regola di Fazione d'Esempio",
-            "text": "Testo inventato a scopo dimostrativo."
+            "name": "Combat Doctrines",
+            "text": ""
+          },
+          {
+            "name": "Transhuman Strategist",
+            "text": ""
           }
         ],
         "uniche": [
           {
-            "name": "Ispirazione Fittizia",
-            "text": "Esempio di abilità unica: sostituisci con le tue note."
+            "name": "High Marshal",
+            "text": "At the start of the Fight phase, select up to one enemy unit engaged with this unit and roll one D6:\n\n• On a 2-3, that enemy unit suffers D3 mortal wounds.\n• On a 4-5, that enemy unit suffers 3 mortal wounds.\n• On a 6+, that enemy unit suffers D3+3 mortal wounds."
+          },
+          {
+            "name": "Crusade of Wrath",
+            "text": "This unit’s melee attacks have:\n\n• +1 A.\n• +1 S."
+          },
+          {
+            "name": "Leader",
+            "text": "This model can be attached to the following units:\n\n• ASSAULT INTERCESSOR SQUAD\n• BLADEGUARD VETERAN SQUAD\n• COMPANY HEROES\n• INTERCESSOR SQUAD\n• CRUSADER SQUAD\n• SWORD BRETHREN SQUAD",
+            "tipo": "Info"
           }
         ]
       },
       "keywords": [
-        "Infantry",
-        "Character",
-        "Esempio"
+        "INFANTRY",
+        "EPIC HERO",
+        "CHAPTER MASTER",
+        "CHARACTER",
+        "EXPLOSIVES",
+        "IMPERIUM",
+        "TACTICUS"
       ],
       "faction_keywords": [
-        "Fazione Fittizia"
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
       ],
-      "wahapediaUrl": ""
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/High-Marshal-Helbrecht"
     },
-    "Squadra Fittizia": {
-      "_esempio": true,
-      "name": "Squadra Fittizia",
-      "fromList": {
-        "points": [
+    "Sword Brethren Squad": {
+      "name": "Sword Brethren Squad",
+      "statline": {
+        "M": "6\"",
+        "T": "5",
+        "Sv": "3+",
+        "W": "3",
+        "Ld": "6+",
+        "OC": "1"
+      },
+      "ranged": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "Range": "18\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "CLOSE-QUARTERS"
+        },
+        {
+          "name": "Hand Flamer",
+          "Range": "9\"",
+          "A": "3",
+          "BS": "-",
+          "S": "4",
+          "AP": "0",
+          "D": "1",
+          "note": "Torrent, CLOSE-QUARTERS"
+        },
+        {
+          "name": "Plasma Pistol - Standard",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "7",
+          "AP": "-2",
+          "D": "1",
+          "note": "CLOSE-QUARTERS"
+        },
+        {
+          "name": "Plasma Pistol - Supercharge",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "8",
+          "AP": "-3",
+          "D": "2",
+          "note": "CLOSE-QUARTERS, Hazardous"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Master-crafted Power Weapon",
+          "A": "3",
+          "WS": "2+",
+          "S": "5",
+          "AP": "-2",
+          "D": "2",
+          "note": "Lethal Hits"
+        },
+        {
+          "name": "Thunder Hammer",
+          "A": "3",
+          "WS": "3+",
+          "S": "8",
+          "AP": "-2",
+          "D": "3",
+          "note": "Devastating Wounds"
+        },
+        {
+          "name": "Twin Lightning Claws",
+          "A": "5",
+          "WS": "2+",
+          "S": "5",
+          "AP": "-2",
+          "D": "1",
+          "note": "Twin-linked"
+        }
+      ],
+      "abilities": {
+        "core": [],
+        "faction": [
           {
-            "models": 5,
-            "points": 100
+            "name": "Combat Doctrines",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Fucile Inventato",
-          "Arma da Mischia Generica",
-          "Lanciafiamme di Prova"
+        "uniche": [
+          {
+            "name": "Exploit their Cowardice",
+            "text": "In your opponent’s Movement phase, when an enemy unit that was engaged with this unit ends a fall-back move, if this unit is unengaged it can make a normal move of up to 6\"."
+          }
         ]
       },
+      "keywords": [
+        "INFANTRY",
+        "EXPLOSIVES",
+        "TACTICUS",
+        "IMPERIUM"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Sword-Brethren-Squad"
+    },
+    "Execrator": {
+      "name": "Execrator",
+      "statline": {
+        "M": "6\"",
+        "T": "5",
+        "Sv": "3+",
+        "W": "4",
+        "Ld": "5+",
+        "OC": "1",
+        "Inv": "4+"
+      },
+      "ranged": [
+        {
+          "name": "Absolvor Bolt Pistol",
+          "Range": "18\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-2",
+          "D": "2",
+          "note": "CLOSE-QUARTERS"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Crozius Arcanum",
+          "A": "5",
+          "WS": "2+",
+          "S": "6",
+          "AP": "-1",
+          "D": "2",
+          "note": "CLEAVE 1"
+        },
+        {
+          "name": "Master-crafted Power Weapon",
+          "A": "3",
+          "WS": "2+",
+          "S": "6",
+          "AP": "-2",
+          "D": "2",
+          "note": "Extra Attacks, Lethal Hits"
+        }
+      ],
+      "abilities": {
+        "core": [
+          {
+            "name": "Leader",
+            "text": ""
+          }
+        ],
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Remorseless Persecution",
+            "text": "In your Movement phase, when this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge."
+          },
+          {
+            "name": "Condemnatory Annihilation",
+            "text": "After this unit has fought, if this unit destroyed an enemy model this phase, each enemy unit engaged with this unit makes a battle-shock roll, with -1 to that battle-shock roll."
+          },
+          {
+            "name": "Leader",
+            "text": "This model can be attached to the following units:\n\n• CRUSADER SQUAD\n• SWORD BRETHREN SQUAD",
+            "tipo": "Info"
+          }
+        ]
+      },
+      "keywords": [
+        "INFANTRY",
+        "CHAPLAIN",
+        "CHARACTER",
+        "EXPLOSIVES",
+        "IMPERIUM",
+        "TACTICUS"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Execrator"
+    },
+    "Crusade Ancient": {
+      "name": "Crusade Ancient",
+      "statline": {
+        "M": "6\"",
+        "T": "5",
+        "Sv": "3+",
+        "W": "4",
+        "Ld": "6+",
+        "OC": "1"
+      },
+      "ranged": [
+        {
+          "name": "Bolt Pistol",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "CLOSE-QUARTERS"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Master-crafted Power Weapon",
+          "A": "5",
+          "WS": "2+",
+          "S": "5",
+          "AP": "-2",
+          "D": "2",
+          "note": "Lethal Hits"
+        }
+      ],
+      "abilities": {
+        "core": [
+          {
+            "name": "Support",
+            "text": ""
+          }
+        ],
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Martial Honour (Once per battle, per unit)",
+            "text": "If this unit’s melee attacks destroyed an enemy unit this phase, you can use this ability. If you do, until the end of the battle, this model has +5 OC."
+          },
+          {
+            "name": "Vengeful Exhortation",
+            "text": "In the Fight phase, you can use this ability. If you do, when a model in this unit is destroyed, if this unit has not been selected to fight this phase, roll one D6:\n\n• On a 4+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield."
+          },
+          {
+            "name": "Support",
+            "text": "This model can be attached to the following units:\n\n• CRUSADER SQUAD\n• SWORD BRETHREN SQUAD",
+            "tipo": "Info"
+          }
+        ]
+      },
+      "keywords": [
+        "INFANTRY",
+        "CHARACTER",
+        "EXPLOSIVES",
+        "IMPERIUM",
+        "TACTICUS"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Crusade-Ancient"
+    },
+    "Crusader Squad": {
+      "name": "Crusader Squad",
       "statline": [
         {
-          "name": "Sergente Fittizio",
+          "name": "Neophyte",
           "M": "6\"",
           "T": "4",
-          "Sv": "3+",
+          "Sv": "4+",
           "W": "2",
           "Ld": "6+",
           "OC": "2"
         },
         {
-          "name": "Soldato Fittizio",
+          "name": "Sword Brother, Initiate",
           "M": "6\"",
-          "T": "4",
+          "T": "5",
           "Sv": "3+",
           "W": "2",
           "Ld": "6+",
@@ -122,34 +397,80 @@
       ],
       "ranged": [
         {
-          "name": "Fucile Inventato",
-          "Range": "24\"",
-          "A": "2",
+          "name": "Bolt Pistol",
+          "Range": "12\"",
+          "A": "1",
           "BS": "3+",
-          "S": "4",
+          "S": "5",
           "AP": "-1",
           "D": "1",
-          "note": "Rapid Fire 1"
+          "note": "CLOSE-QUARTERS"
         },
         {
-          "name": "Lanciafiamme di Prova",
-          "Range": "12\"",
-          "A": "D6",
-          "BS": "N/A",
-          "S": "4",
-          "AP": "0",
+          "name": "Heavy Bolt Pistol",
+          "Range": "18\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
           "D": "1",
-          "note": "Ignores Cover, Torrent"
+          "note": "CLOSE-QUARTERS"
+        },
+        {
+          "name": "Pyreblaster",
+          "Range": "12\"",
+          "A": "3",
+          "BS": "-",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "BLAST 1, Torrent"
         }
       ],
       "melee": [
         {
-          "name": "Arma da Mischia Generica",
+          "name": "Close combat weapon",
           "A": "3",
           "WS": "3+",
           "S": "4",
           "AP": "0",
           "D": "1",
+          "note": ""
+        },
+        {
+          "name": "Initiate Chainsword",
+          "A": "4",
+          "WS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "Sustained Hits 1"
+        },
+        {
+          "name": "Master-crafted Power Weapon",
+          "A": "3",
+          "WS": "2+",
+          "S": "5",
+          "AP": "-2",
+          "D": "2",
+          "note": "Lethal Hits"
+        },
+        {
+          "name": "Neophyte Chainsword",
+          "A": "4",
+          "WS": "3+",
+          "S": "4",
+          "AP": "-1",
+          "D": "1",
+          "note": "Sustained Hits 1"
+        },
+        {
+          "name": "Power Fist",
+          "A": "3",
+          "WS": "3+",
+          "S": "8",
+          "AP": "-2",
+          "D": "2",
           "note": ""
         }
       ],
@@ -157,427 +478,598 @@
         "core": [],
         "faction": [
           {
-            "name": "Regola di Fazione d'Esempio",
-            "text": "Testo inventato a scopo dimostrativo."
+            "name": "Combat Doctrines",
+            "text": ""
           }
         ],
         "uniche": [
           {
-            "name": "Formazione di Prova",
-            "text": "Abilità fittizia per mostrare l'impaginazione."
+            "name": "Righteous Zeal",
+            "text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6+1\"."
           }
         ]
       },
       "keywords": [
-        "Infantry",
-        "Battleline",
-        "Esempio"
+        "INFANTRY",
+        "BATTLELINE",
+        "EXPLOSIVES",
+        "IMPERIUM",
+        "TACTICUS"
       ],
       "faction_keywords": [
-        "Fazione Fittizia"
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
       ],
-      "wahapediaUrl": ""
-    },
-    "High Marshal Helbrecht": {
-      "name": "High Marshal Helbrecht",
-      "fromList": {
-        "points": [
-          {
-            "models": 1,
-            "points": 125
-          }
-        ],
-        "wargear": [
-          "Ferocity",
-          "Sword of the High Marshals"
-        ]
-      },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
-    },
-    "Sword Brethren Squad": {
-      "name": "Sword Brethren Squad",
-      "fromList": {
-        "points": [
-          {
-            "models": 5,
-            "points": 140
-          },
-          {
-            "models": 10,
-            "points": 285
-          }
-        ],
-        "wargear": [
-          "Hand Flamer",
-          "Heavy Bolt Pistol",
-          "Master-crafted Power Weapon",
-          "Plasma Pistol",
-          "Thunder Hammer",
-          "Twin Lightning Claws"
-        ]
-      },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
-    },
-    "Execrator": {
-      "name": "Execrator",
-      "fromList": {
-        "points": [
-          {
-            "models": 1,
-            "points": 65
-          }
-        ],
-        "wargear": [
-          "Absolvor Bolt Pistol",
-          "Crozius Arcanum",
-          "Master-crafted Power Weapon"
-        ]
-      },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
-    },
-    "Crusade Ancient": {
-      "name": "Crusade Ancient",
-      "fromList": {
-        "points": [
-          {
-            "models": 1,
-            "points": 45
-          }
-        ],
-        "wargear": [
-          "Bolt Pistol",
-          "Master-crafted Power Weapon"
-        ]
-      },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
-    },
-    "Crusader Squad": {
-      "name": "Crusader Squad",
-      "fromList": {
-        "points": [
-          {
-            "models": 20,
-            "points": 305
-          }
-        ],
-        "wargear": [
-          "Heavy Bolt Pistol",
-          "Master-crafted Power Weapon",
-          "Bolt Pistol",
-          "Close combat weapon",
-          "Initiate Chainsword",
-          "Power Fist",
-          "Pyreblaster",
-          "Neophyte Chainsword"
-        ]
-      },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Crusader-Squad"
     },
     "Marshal": {
       "name": "Marshal",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "6\"",
+        "T": "5",
+        "Sv": "3+",
+        "W": "5",
+        "Ld": "6+",
+        "OC": "1",
+        "Inv": "4+"
+      },
+      "ranged": [
+        {
+          "name": "Plasma Pistol - Standard",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "2+",
+          "S": "7",
+          "AP": "-2",
+          "D": "1",
+          "note": "CLOSE-QUARTERS"
+        },
+        {
+          "name": "Plasma Pistol - Supercharge",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "2+",
+          "S": "8",
+          "AP": "-3",
+          "D": "2",
+          "note": "Hazardous, CLOSE-QUARTERS"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Master-crafted Power Weapon",
+          "A": "7",
+          "WS": "2+",
+          "S": "6",
+          "AP": "-2",
+          "D": "2",
+          "note": "Lethal Hits"
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 1,
-            "points": 80
+            "name": "Leader",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Master-crafted Power Weapon",
-          "Plasma Pistol"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          },
+          {
+            "name": "Transhuman Strategist",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Inspirational Exemplar",
+            "text": "This unit’s melee attacks have +1 to hit rolls."
+          },
+          {
+            "name": "Pious Fervour",
+            "text": "When this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have +1 A for each enemy unit within 6\" of this model (to a maximum of +3 A)."
+          },
+          {
+            "name": "Leader",
+            "text": "This model can be attached to the following units:\n\n• ASSAULT INTERCESSOR SQUAD\n• BLADEGUARD VETERAN SQUAD\n• INFERNUS SQUAD\n• INTERCESSOR SQUAD\n• STERNGUARD VETERAN SQUAD\n• CRUSADER SQUAD\n• SWORD BRETHREN SQUAD",
+            "tipo": "Info"
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "INFANTRY",
+        "CAPTAIN",
+        "CHARACTER",
+        "EXPLOSIVES",
+        "IMPERIUM",
+        "TACTICUS"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES",
+        "BLACK TEMPLARS"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Marshal"
     },
     "Assault Intercessors with Jump Packs": {
       "name": "Assault Intercessors with Jump Packs",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "12\"",
+        "T": "5",
+        "Sv": "3+",
+        "W": "2",
+        "Ld": "6+",
+        "OC": "1"
+      },
+      "ranged": [
+        {
+          "name": "Heavy Bolt Pistol",
+          "Range": "18\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "CLOSE-QUARTERS"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chainsword",
+          "A": "4",
+          "WS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 5,
-            "points": 95
+            "name": "Deep Strike",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Chainsword",
-          "Heavy Bolt Pistol"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Hammer of Wrath",
+            "text": "When this unit ends a charge move, you can select one enemy unit engaged with this unit. For each model in this unit engaged with that enemy unit, roll one D6:\n\n• On a 4+, that enemy unit suffers 1 mortal wound."
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "INFANTRY",
+        "EXPLOSIVES",
+        "FLY",
+        "IMPERIUM",
+        "JUMP PACK",
+        "TACTICUS"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Assault-Intercessors-With-Jump-Packs"
     },
     "Brutalis Dreadnought": {
       "name": "Brutalis Dreadnought",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "10\"",
+        "T": "10",
+        "Sv": "2+",
+        "W": "12",
+        "Ld": "6+",
+        "OC": "4"
+      },
+      "ranged": [
+        {
+          "name": "Bolt Rifles",
+          "Range": "24\"",
+          "A": "4",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "Twin-linked"
+        },
+        {
+          "name": "Twin Icarus Ironhail Heavy Stubber",
+          "Range": "36\"",
+          "A": "3",
+          "BS": "3+",
+          "S": "4",
+          "AP": "-1",
+          "D": "1",
+          "note": "Anti-Fly 3+, Rapid Fire 3, Twin-linked"
+        },
+        {
+          "name": "Twin Multi-melta",
+          "Range": "18\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "10",
+          "AP": "-3",
+          "D": "D3+2",
+          "note": "Twin-linked, Melta 3"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Brutalis Fists",
+          "A": "6",
+          "WS": "3+",
+          "S": "12",
+          "AP": "-3",
+          "D": "D3+3",
+          "note": "Twin-linked"
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 1,
-            "points": 160
+            "name": "Damaged 4",
+            "text": ""
+          },
+          {
+            "name": "Deadly Demise D3",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Bolt Rifles",
-          "Brutalis Fists",
-          "Twin Icarus Ironhail Heavy Stubber",
-          "Twin Multi-melta"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Brutalis Charge (Once per phase, per unit)",
+            "text": "You can target this unit with the Crushing Impact stratagem, regardless of any other uses of that stratagem this phase. If you do:\n\n• That use is -1 CP.\n• That use does not prevent any uses of that stratagem on other units this phase."
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "VEHICLE",
+        "DREADNOUGHT",
+        "IMPERIUM",
+        "WALKER",
+        "DEATHWING"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Brutalis-Dreadnought-UL"
     },
     "Gladiator Lancer": {
       "name": "Gladiator Lancer",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "10\"",
+        "T": "10",
+        "Sv": "3+",
+        "W": "12",
+        "Ld": "6+",
+        "OC": "3"
+      },
+      "ranged": [
+        {
+          "name": "Defensive Array",
+          "Range": "24\"",
+          "A": "6",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "Rapid Fire 6"
+        },
+        {
+          "name": "Laser Destroyer",
+          "Range": "72\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "14",
+          "AP": "-3",
+          "D": "D6+3",
+          "note": "Heavy"
+        },
+        {
+          "name": "Multi-melta",
+          "Range": "18\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "10",
+          "AP": "-3",
+          "D": "D3+2",
+          "note": "Melta 3 · ⚠ non presente nella datasheet 11ª ed. di questa unità; profilo preso da Land Raider Redeemer"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Armoured Hull",
+          "A": "3",
+          "WS": "4+",
+          "S": "6",
+          "AP": "0",
+          "D": "1",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 1,
-            "points": 175
+            "name": "Damaged 4",
+            "text": ""
+          },
+          {
+            "name": "Deadly Demise D3",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Armoured Hull",
-          "Defensive Array",
-          "Laser Destroyer",
-          "Multi-melta"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Aquilon Optics",
+            "text": "This unit’s ranged attacks that target a MONSTER/VEHICLE unit can:\n\n• Re-roll one hit roll.\n• Re-roll one wound roll.\n• Re-roll one damage roll."
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "VEHICLE",
+        "FRAME",
+        "IMPERIUM",
+        "SMOKE"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Gladiator-Lancer"
     },
     "Land Raider Redeemer": {
       "name": "Land Raider Redeemer",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "12\"",
+        "T": "12",
+        "Sv": "2+",
+        "W": "16",
+        "Ld": "6+",
+        "OC": "5"
+      },
+      "ranged": [
+        {
+          "name": "Flamestorm Cannon",
+          "Range": "12\"",
+          "A": "4",
+          "BS": "-",
+          "S": "6",
+          "AP": "-2",
+          "D": "2",
+          "note": "Torrent, BLAST 2"
+        },
+        {
+          "name": "Hunter-killer Missile",
+          "Range": "48\"",
+          "A": "1",
+          "BS": "2+",
+          "S": "14",
+          "AP": "-3",
+          "D": "D3+3",
+          "note": "ONE SHOT"
+        },
+        {
+          "name": "Multi-melta",
+          "Range": "18\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "10",
+          "AP": "-3",
+          "D": "D3+2",
+          "note": "Melta 3"
+        },
+        {
+          "name": "Storm Bolter",
+          "Range": "24\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": "Rapid Fire 2"
+        },
+        {
+          "name": "Twin Assault Cannon",
+          "Range": "24\"",
+          "A": "6",
+          "BS": "3+",
+          "S": "6",
+          "AP": "-2",
+          "D": "1",
+          "note": "Sustained Hits 1, Twin-linked"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Armoured Tracks",
+          "A": "6",
+          "WS": "4+",
+          "S": "8",
+          "AP": "0",
+          "D": "1",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 1,
-            "points": 245
+            "name": "Damaged 6",
+            "text": ""
+          },
+          {
+            "name": "Deadly Demise D6",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Armoured Tracks",
-          "Flamestorm Cannon",
-          "Hunter-killer Missile",
-          "Multi-melta",
-          "Storm Bolter",
-          "Twin Assault Cannon"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Assault Ramp",
+            "text": "In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move."
+          },
+          {
+            "name": "Wrath of the Machine Spirit",
+            "text": "This unit’s ranged attacks that target a unit within 12\" of this unit have [Devastating Wounds: non-Monster/vehicle]."
+          },
+          {
+            "name": "Transport",
+            "text": "This model has a transport capacity of 14 ADEPTUS ASTARTES INFANTRY models. It cannot transport JUMP PACK models. Each GRAVIS/TERMINATOR model takes up the space of 2 models.",
+            "tipo": "Info"
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "VEHICLE",
+        "EXPLOSIVES",
+        "FRAME",
+        "IMPERIUM",
+        "SMOKE",
+        "TRANSPORT",
+        "DEATHWING"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Land-Raider-Redeemer"
     },
     "Repulsor Executioner": {
       "name": "Repulsor Executioner",
-      "fromList": {
-        "points": [
+      "statline": {
+        "M": "10\"",
+        "T": "12",
+        "Sv": "3+",
+        "W": "16",
+        "Ld": "6+",
+        "OC": "5"
+      },
+      "ranged": [
+        {
+          "name": "Defensive Array",
+          "Range": "24\"",
+          "A": "18",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "1",
+          "note": ""
+        },
+        {
+          "name": "Heavy Laser Destroyer",
+          "Range": "72\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "16",
+          "AP": "-4",
+          "D": "D6+4",
+          "note": "Devastating Wounds, Heavy"
+        },
+        {
+          "name": "Heavy Onslaught Gatling Cannon",
+          "Range": "24\"",
+          "A": "12",
+          "BS": "3+",
+          "S": "6",
+          "AP": "-1",
+          "D": "1",
+          "note": "SUSTAINED HITS 2: non-MONSTER/VEHICLE, DEVASTATING WOUNDS: non-MONSTER/VEHICLE"
+        },
+        {
+          "name": "Twin Heavy Bolter",
+          "Range": "36\"",
+          "A": "3",
+          "BS": "3+",
+          "S": "5",
+          "AP": "-1",
+          "D": "2",
+          "note": "Sustained Hits 1, Rapid Fire 2, Twin-linked"
+        },
+        {
+          "name": "Multi-melta",
+          "Range": "18\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "10",
+          "AP": "-3",
+          "D": "D3+2",
+          "note": "Melta 3 · ⚠ non presente nella datasheet 11ª ed. di questa unità; profilo preso da Land Raider Redeemer"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Armoured Hull",
+          "A": "6",
+          "WS": "4+",
+          "S": "8",
+          "AP": "0",
+          "D": "1",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [
           {
-            "models": 1,
-            "points": 275
+            "name": "Damaged 6",
+            "text": ""
+          },
+          {
+            "name": "Deadly Demise D6",
+            "text": ""
           }
         ],
-        "wargear": [
-          "Armoured Hull",
-          "Defensive Array",
-          "Heavy Laser Destroyer",
-          "Heavy Onslaught Gatling Cannon",
-          "Multi-melta",
-          "Twin Heavy Bolter"
+        "faction": [
+          {
+            "name": "Combat Doctrines",
+            "text": ""
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Executioner",
+            "text": "This unit’s ranged attacks that target a unit not below half-strength have +1 to hit rolls."
+          },
+          {
+            "name": "Transport",
+            "text": "This model has a transport capacity of 7 Adeptus Astartes Infantry models. It cannot transport Jump Pack models. Each Gravis/Terminator model takes up the space of 2 models.",
+            "tipo": "Info"
+          }
         ]
       },
-      "statline": {
-        "M": "",
-        "T": "",
-        "Sv": "",
-        "Inv": "",
-        "W": "",
-        "Ld": "",
-        "OC": ""
-      },
-      "ranged": [],
-      "melee": [],
-      "abilities": {
-        "core": [],
-        "faction": [],
-        "uniche": []
-      },
-      "keywords": [],
-      "faction_keywords": [],
-      "wahapediaUrl": ""
+      "keywords": [
+        "VEHICLE",
+        "FRAME",
+        "IMPERIUM",
+        "SMOKE",
+        "TRANSPORT",
+        "DEATHWING"
+      ],
+      "faction_keywords": [
+        "ADEPTUS ASTARTES"
+      ],
+      "wahapediaUrl": "https://wahapedia.ru/wh40k11ed/factions/space-marines/Repulsor-Executioner"
     }
   }
 }
