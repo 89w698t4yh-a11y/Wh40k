@@ -1,0 +1,114 @@
+Templari (1.995 Points)
+
+Space Marines
+Black Templars
+Marshal's Household and Vow-sworn Crusaders (3 Detachment Points)
+Purge the Foe
+Strike Force (2.000 Points)
+
+ATTACHED UNITS
+
+Attached unit 1
+
+High Marshal Helbrecht (125 Points)
+  • Attached as: Leader (Character)
+  • Warlord
+  • 1x Ferocity
+  • 1x Sword of the High Marshals
+
+Sword Brethren Squad (285 Points)
+  • Attached as: Bodyguard
+  • Enhancements: Fervent Exemplars (Upgrade)
+  • 10x Sword Brother
+     ◦ 4x Hand Flamer
+     ◦ 2x Heavy Bolt Pistol
+     ◦ 6x Master-crafted Power Weapon
+     ◦ 2x Plasma Pistol
+     ◦ 2x Thunder Hammer
+     ◦ 2x Twin Lightning Claws
+
+Attached unit 2
+
+Execrator (65 Points)
+  • Attached as: Leader (Character)
+  • 1x Absolvor Bolt Pistol
+  • 1x Crozius Arcanum
+  • 1x Master-crafted Power Weapon
+
+Crusade Ancient (45 Points)
+  • Attached as: Support (Character)
+  • 1x Bolt Pistol
+  • 1x Master-crafted Power Weapon
+
+Crusader Squad (305 Points)
+  • Attached as: Bodyguard (Battleline)
+  • 1x Sword Brother
+     ◦ 1x Heavy Bolt Pistol
+     ◦ 1x Master-crafted Power Weapon
+  • 11x Initiate
+     ◦ 11x Bolt Pistol
+     ◦ 11x Close combat weapon
+     ◦ 10x Heavy Bolt Pistol
+     ◦ 8x Initiate Chainsword
+     ◦ 2x Power Fist
+     ◦ 1x Pyreblaster
+  • 8x Neophyte
+     ◦ 8x Bolt Pistol
+     ◦ 8x Neophyte Chainsword
+
+Attached unit 3
+
+Marshal (80 Points)
+  • Attached as: Leader (Character)
+  • 1x Master-crafted Power Weapon
+  • 1x Plasma Pistol
+
+Sword Brethren Squad (140 Points)
+  • Attached as: Bodyguard
+  • 5x Sword Brother
+     ◦ 2x Hand Flamer
+     ◦ 1x Heavy Bolt Pistol
+     ◦ 3x Master-crafted Power Weapon
+     ◦ 1x Plasma Pistol
+     ◦ 1x Thunder Hammer
+     ◦ 1x Twin Lightning Claws
+
+OTHER DATASHEETS
+
+Assault Intercessors with Jump Packs (95 Points)
+  • 1x Assault Intercessor Sergeant with Jump Pack
+     ◦ 1x Chainsword
+     ◦ 1x Heavy Bolt Pistol
+  • 4x Assault Intercessor with Jump Pack
+     ◦ 4x Chainsword
+     ◦ 4x Heavy Bolt Pistol
+
+Brutalis Dreadnought (160 Points)
+  • 1x Bolt Rifles
+  • 1x Brutalis Fists
+  • 1x Twin Icarus Ironhail Heavy Stubber
+  • 1x Twin Multi-melta
+
+Gladiator Lancer (175 Points)
+  • 1x Armoured Hull
+  • 1x Defensive Array
+  • 1x Laser Destroyer
+  • 1x Multi-melta
+
+Land Raider Redeemer (245 Points)
+  • 1x Armoured Tracks
+  • 2x Flamestorm Cannon
+  • 1x Hunter-killer Missile
+  • 1x Multi-melta
+  • 1x Storm Bolter
+  • 1x Twin Assault Cannon
+
+Repulsor Executioner (275 Points)
+  • 1x Armoured Hull
+  • 1x Defensive Array
+  • 1x Heavy Laser Destroyer
+  • 1x Heavy Onslaught Gatling Cannon
+  • 1x Multi-melta
+  • 1x Twin Heavy Bolter
+
+Exported with App Version: v2.8.1 (1), Data Version: v995

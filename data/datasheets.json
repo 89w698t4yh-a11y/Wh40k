@@ -1,0 +1,583 @@
+{
+  "meta": {
+    "edition": "11",
+    "dataYear": 2026,
+    "version": "2026-11-17",
+    "note": "Dati inseriti manualmente dall'utente. Nessun testo-regole di Games Workshop è incluso nel repository. Le voci con \"_esempio\": true sono FITTIZIE e servono solo a mostrare una scheda compilata.",
+    "wahapediaSearchUrl": "https://www.google.com/search?q=site%3Awahapedia.ru+%22{q}%22"
+  },
+  "units": {
+    "Guardiano d'Esempio": {
+      "_esempio": true,
+      "name": "Guardiano d'Esempio",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 90
+          }
+        ],
+        "wargear": [
+          "Pistola Dimostrativa",
+          "Lama di Prova"
+        ]
+      },
+      "statline": {
+        "M": "6\"",
+        "T": "4",
+        "Sv": "3+",
+        "Inv": "5+",
+        "W": "5",
+        "Ld": "6+",
+        "OC": "1"
+      },
+      "ranged": [
+        {
+          "name": "Pistola Dimostrativa",
+          "Range": "12\"",
+          "A": "1",
+          "BS": "3+",
+          "S": "4",
+          "AP": "-1",
+          "D": "1",
+          "note": "Pistol"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Lama di Prova",
+          "A": "5",
+          "WS": "2+",
+          "S": "5",
+          "AP": "-2",
+          "D": "2",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [
+          {
+            "name": "Leader",
+            "text": "Testo segnaposto: qui va il riassunto della regola, scritto da te."
+          }
+        ],
+        "faction": [
+          {
+            "name": "Regola di Fazione d'Esempio",
+            "text": "Testo inventato a scopo dimostrativo."
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Ispirazione Fittizia",
+            "text": "Esempio di abilità unica: sostituisci con le tue note."
+          }
+        ]
+      },
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Esempio"
+      ],
+      "faction_keywords": [
+        "Fazione Fittizia"
+      ],
+      "wahapediaUrl": ""
+    },
+    "Squadra Fittizia": {
+      "_esempio": true,
+      "name": "Squadra Fittizia",
+      "fromList": {
+        "points": [
+          {
+            "models": 5,
+            "points": 100
+          }
+        ],
+        "wargear": [
+          "Fucile Inventato",
+          "Arma da Mischia Generica",
+          "Lanciafiamme di Prova"
+        ]
+      },
+      "statline": [
+        {
+          "name": "Sergente Fittizio",
+          "M": "6\"",
+          "T": "4",
+          "Sv": "3+",
+          "W": "2",
+          "Ld": "6+",
+          "OC": "2"
+        },
+        {
+          "name": "Soldato Fittizio",
+          "M": "6\"",
+          "T": "4",
+          "Sv": "3+",
+          "W": "2",
+          "Ld": "6+",
+          "OC": "2"
+        }
+      ],
+      "ranged": [
+        {
+          "name": "Fucile Inventato",
+          "Range": "24\"",
+          "A": "2",
+          "BS": "3+",
+          "S": "4",
+          "AP": "-1",
+          "D": "1",
+          "note": "Rapid Fire 1"
+        },
+        {
+          "name": "Lanciafiamme di Prova",
+          "Range": "12\"",
+          "A": "D6",
+          "BS": "N/A",
+          "S": "4",
+          "AP": "0",
+          "D": "1",
+          "note": "Ignores Cover, Torrent"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Arma da Mischia Generica",
+          "A": "3",
+          "WS": "3+",
+          "S": "4",
+          "AP": "0",
+          "D": "1",
+          "note": ""
+        }
+      ],
+      "abilities": {
+        "core": [],
+        "faction": [
+          {
+            "name": "Regola di Fazione d'Esempio",
+            "text": "Testo inventato a scopo dimostrativo."
+          }
+        ],
+        "uniche": [
+          {
+            "name": "Formazione di Prova",
+            "text": "Abilità fittizia per mostrare l'impaginazione."
+          }
+        ]
+      },
+      "keywords": [
+        "Infantry",
+        "Battleline",
+        "Esempio"
+      ],
+      "faction_keywords": [
+        "Fazione Fittizia"
+      ],
+      "wahapediaUrl": ""
+    },
+    "High Marshal Helbrecht": {
+      "name": "High Marshal Helbrecht",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 125
+          }
+        ],
+        "wargear": [
+          "Ferocity",
+          "Sword of the High Marshals"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Sword Brethren Squad": {
+      "name": "Sword Brethren Squad",
+      "fromList": {
+        "points": [
+          {
+            "models": 5,
+            "points": 140
+          },
+          {
+            "models": 10,
+            "points": 285
+          }
+        ],
+        "wargear": [
+          "Hand Flamer",
+          "Heavy Bolt Pistol",
+          "Master-crafted Power Weapon",
+          "Plasma Pistol",
+          "Thunder Hammer",
+          "Twin Lightning Claws"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Execrator": {
+      "name": "Execrator",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 65
+          }
+        ],
+        "wargear": [
+          "Absolvor Bolt Pistol",
+          "Crozius Arcanum",
+          "Master-crafted Power Weapon"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Crusade Ancient": {
+      "name": "Crusade Ancient",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 45
+          }
+        ],
+        "wargear": [
+          "Bolt Pistol",
+          "Master-crafted Power Weapon"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Crusader Squad": {
+      "name": "Crusader Squad",
+      "fromList": {
+        "points": [
+          {
+            "models": 20,
+            "points": 305
+          }
+        ],
+        "wargear": [
+          "Heavy Bolt Pistol",
+          "Master-crafted Power Weapon",
+          "Bolt Pistol",
+          "Close combat weapon",
+          "Initiate Chainsword",
+          "Power Fist",
+          "Pyreblaster",
+          "Neophyte Chainsword"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Marshal": {
+      "name": "Marshal",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 80
+          }
+        ],
+        "wargear": [
+          "Master-crafted Power Weapon",
+          "Plasma Pistol"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Assault Intercessors with Jump Packs": {
+      "name": "Assault Intercessors with Jump Packs",
+      "fromList": {
+        "points": [
+          {
+            "models": 5,
+            "points": 95
+          }
+        ],
+        "wargear": [
+          "Chainsword",
+          "Heavy Bolt Pistol"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Brutalis Dreadnought": {
+      "name": "Brutalis Dreadnought",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 160
+          }
+        ],
+        "wargear": [
+          "Bolt Rifles",
+          "Brutalis Fists",
+          "Twin Icarus Ironhail Heavy Stubber",
+          "Twin Multi-melta"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Gladiator Lancer": {
+      "name": "Gladiator Lancer",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 175
+          }
+        ],
+        "wargear": [
+          "Armoured Hull",
+          "Defensive Array",
+          "Laser Destroyer",
+          "Multi-melta"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Land Raider Redeemer": {
+      "name": "Land Raider Redeemer",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 245
+          }
+        ],
+        "wargear": [
+          "Armoured Tracks",
+          "Flamestorm Cannon",
+          "Hunter-killer Missile",
+          "Multi-melta",
+          "Storm Bolter",
+          "Twin Assault Cannon"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    },
+    "Repulsor Executioner": {
+      "name": "Repulsor Executioner",
+      "fromList": {
+        "points": [
+          {
+            "models": 1,
+            "points": 275
+          }
+        ],
+        "wargear": [
+          "Armoured Hull",
+          "Defensive Array",
+          "Heavy Laser Destroyer",
+          "Heavy Onslaught Gatling Cannon",
+          "Multi-melta",
+          "Twin Heavy Bolter"
+        ]
+      },
+      "statline": {
+        "M": "",
+        "T": "",
+        "Sv": "",
+        "Inv": "",
+        "W": "",
+        "Ld": "",
+        "OC": ""
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": {
+        "core": [],
+        "faction": [],
+        "uniche": []
+      },
+      "keywords": [],
+      "faction_keywords": [],
+      "wahapediaUrl": ""
+    }
+  }
+}
