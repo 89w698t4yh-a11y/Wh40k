@@ -1,0 +1,1119 @@
+{
+  "meta": {
+    "list": "Templari",
+    "source": "Wahapedia, 11ª edizione (regole d'armata Space Marines/Black Templars, distaccamenti Marshal's Household e Vow-sworn Crusaders, stratagemmi core), letto il 2026-11-17",
+    "version": "2026-11-17"
+  },
+  "phases": [
+    {
+      "id": "inizio",
+      "name": "Inizio battaglia / round"
+    },
+    {
+      "id": "comando",
+      "name": "Comando"
+    },
+    {
+      "id": "movimento",
+      "name": "Movimento"
+    },
+    {
+      "id": "tiro",
+      "name": "Tiro"
+    },
+    {
+      "id": "carica",
+      "name": "Carica"
+    },
+    {
+      "id": "combattimento",
+      "name": "Combattimento"
+    },
+    {
+      "id": "sempre",
+      "name": "In ogni momento"
+    }
+  ],
+  "rules": [
+    {
+      "cp": null,
+      "units": [],
+      "once": null,
+      "id": "templar-vows",
+      "name": "Templar Vows",
+      "source": "Distaccamento · Vow-sworn Crusaders",
+      "kind": "scelta",
+      "phases": [
+        "inizio"
+      ],
+      "turn": "mio",
+      "when": "Inizio del primo round di battaglia",
+      "it": "Scegli UN voto, attivo per tutta la battaglia per le unità ADEPTUS ASTARTES:\n• Abhor the Witch – in mischia contro PSYKER: [PRECISION] e [LANCE].\n• Accept Any Challenge – in mischia +1 a ferire se la T del bersaglio è maggiore della S dell'arma.\n• Uphold the Honour of the Emperor – FANTERIA: a fine Movimento gli obiettivi che controlli diventano \"secured\"; dopo un advance possono comunque iniziare un'azione.",
+      "text": "At the start of the first battle round, you can select one Vow listed below. That Vow is active for friendly ADEPTUS ASTARTES units until the end of the battle.\n\nAbhor the Witch, Destroy the Witch – This unit’s melee attacks that target a PSYKER unit have [PRECISION] and [LANCE].\n\nAccept Any Challenge, No Matter the Odds – Friendly melee attacks that target a unit with a T greater than this unit’s S have +1 to wound rolls.\n\nUphold the Honour of the Emperor – Friendly INFANTRY units have: at the end of your Movement phase, if this unit is controlling an objective, that objective is secured. When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to start an action."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht"
+      ],
+      "once": null,
+      "id": "transhuman",
+      "name": "Transhuman Strategist",
+      "source": "Regola d'armata",
+      "kind": "auto",
+      "phases": [
+        "inizio"
+      ],
+      "turn": "entrambi",
+      "when": "Inizio di ogni round di battaglia",
+      "it": "Il tuo WARLORD è High Marshal Helbrecht: ottieni 1 CP all'inizio di ogni round.",
+      "text": "At the start of the battle round, if a model with this ability is your WARLORD, gain 1CP."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "deep-strike-setup",
+      "name": "Deep Strike (schieramento)",
+      "source": "Abilità core",
+      "kind": "scelta",
+      "phases": [
+        "inizio"
+      ],
+      "turn": "mio",
+      "when": "Schieramento",
+      "it": "Ricorda: puoi tenere gli Assault Intercessors in riserva per entrare poi con Deep Strike (a più di 8\" dai nemici, anche nella zona avversaria).",
+      "text": "Each time this unit makes an ingress move (20.04), if every model in this unit has this ability, it can be set up anywhere on the battlefield that is more than 8\" horizontally from all enemy units, even if that is within your opponent’s deployment zone."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "combat-doctrines",
+      "name": "Combat Doctrines",
+      "source": "Regola d'armata",
+      "kind": "scelta",
+      "phases": [
+        "comando"
+      ],
+      "turn": "mio",
+      "when": "Inizio della tua fase di Comando",
+      "it": "Scegli una dottrina, attiva fino al tuo prossimo Comando. Ognuna si usa UNA sola volta per battaglia:\n• Assault – dopo un advance puoi comunque dichiarare la carica.\n• Devastator – le armi a distanza hanno [ASSAULT].\n• Tactical – dopo un fall-back puoi comunque sparare e caricare.",
+      "text": "At the start of your Command phase, you can select one combat doctrine listed below. If you do, that combat doctrine is active for friendly ADEPTUS ASTARTES units with this ability until the start of your next Command phase.\n\nASSAULT DOCTRINE – When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge.\nDEVASTATOR DOCTRINE – This unit’s ranged attacks have [ASSAULT].\nTACTICAL DOCTRINE – When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot and eligible to declare a charge.\n\nYou can only select each combat doctrine once per battle. Only one combat doctrine can be active for each unit."
+    },
+    {
+      "cp": 1,
+      "units": [],
+      "once": "battaglia",
+      "id": "insane-bravery",
+      "name": "Insane Bravery",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "comando"
+      ],
+      "turn": "mio",
+      "when": "Battle-shock step della tua fase di Comando, prima di un battle-shock roll",
+      "it": "Il battle-shock roll di una tua unità riesce automaticamente. Una volta per battaglia.",
+      "text": "WHEN: Battle-shock step of your Command phase, just before you make a battle-shock roll for a friendly unit.\nTARGET: That unit.\nEFFECT: That battle-shock roll is automatically successful.\nRESTRICTIONS: You cannot use this stratagem more than once per battle."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "doctrine-assault",
+      "name": "Assault Doctrine (se attiva)",
+      "source": "Regola d'armata",
+      "kind": "auto",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Quando un'unità fa advance",
+      "it": "Se hai scelto Assault: chi fa advance può comunque caricare.",
+      "text": "When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "doctrine-tactical",
+      "name": "Tactical Doctrine (se attiva)",
+      "source": "Regola d'armata",
+      "kind": "auto",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Quando un'unità fa fall-back",
+      "it": "Se hai scelto Tactical: chi fa fall-back può comunque sparare e caricare.",
+      "text": "When this unit is selected to make a fall-back move, that fall-back move does not prevent this unit from being eligible to shoot and eligible to declare a charge."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Execrator"
+      ],
+      "once": null,
+      "id": "remorseless",
+      "name": "Remorseless Persecution",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Quando l'unità dell'Execrator fa advance",
+      "it": "L'unità con l'Execrator (Crusader Squad) può fare advance e poi caricare comunque.",
+      "text": "In your Movement phase, when this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to declare a charge."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Land Raider Redeemer"
+      ],
+      "once": null,
+      "id": "assault-ramp",
+      "name": "Assault Ramp",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Quando il Land Raider finisce un movimento normale",
+      "it": "Le unità a bordo possono fare un assault disembark move (sbarco entro 3\", possono ancora caricare).",
+      "text": "In your Movement phase, when this unit ends a normal move, units embarked within this unit can make an assault disembark move."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "deep-strike",
+      "name": "Deep Strike",
+      "source": "Abilità core",
+      "kind": "scelta",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Quando entri dalle riserve (ingress move)",
+      "it": "Gli Assault Intercessors possono arrivare ovunque a più di 8\" orizzontali da ogni nemico.",
+      "text": "Each time this unit makes an ingress move (20.04), if every model in this unit has this ability, it can be set up anywhere on the battlefield that is more than 8\" horizontally from all enemy units, even if that is within your opponent’s deployment zone."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "vow-uphold",
+      "name": "Uphold the Honour (se scelto)",
+      "source": "Distaccamento · Templar Vows",
+      "kind": "auto",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "mio",
+      "when": "Fine della tua fase di Movimento",
+      "it": "Se hai scelto questo voto: gli obiettivi controllati dalla tua FANTERIA diventano \"secured\". Dopo un advance la fanteria può comunque iniziare un'azione.",
+      "text": "At the end of your Movement phase, if this unit is controlling an objective, that objective is secured. When this unit is selected to make an advance move, that advance move does not prevent this unit from being eligible to start an action."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "exploit-cowardice",
+      "name": "Exploit their Cowardice",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "avv",
+      "when": "Un nemico che era ingaggiato con le Sword Brethren finisce un fall-back",
+      "it": "Se le Sword Brethren non sono più ingaggiate, possono fare un movimento normale fino a 6\".",
+      "text": "In your opponent’s Movement phase, when an enemy unit that was engaged with this unit ends a fall-back move, if this unit is unengaged it can make a normal move of up to 6\"."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "unsparing-execution",
+      "name": "Unsparing Execution",
+      "source": "Stratagemma · Marshal's Household",
+      "kind": "strat",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "avv",
+      "when": "Un nemico ingaggiato con le Sword Brethren viene scelto per il fall-back",
+      "it": "Quel nemico deve usare la desperate escape (con -1 agli hazard roll se è in battle-shock).",
+      "text": "WHEN: Your opponent’s Movement phase, when a unit is selected to make a fall-back move, if that unit is engaged with a friendly SWORD BRETHREN SQUAD unit.\nTARGET: That SWORD BRETHREN SQUAD unit.\nEFFECT: When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode, with -1 to those hazard rolls if that enemy unit is battle-shocked."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "heresy-begets",
+      "name": "Heresy Begets Retribution",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "avv",
+      "when": "Un nemico finisce un movimento entro 8\" da una tua unità di FANTERIA",
+      "it": "Quella tua unità di fanteria fa un surge move fino a D6\".",
+      "text": "WHEN: Your opponent’s Movement phase, when an enemy unit ends a move within 8\" of a friendly ADEPTUS ASTARTES INFANTRY unit.\nTARGET: That ADEPTUS ASTARTES INFANTRY unit.\nEFFECT: Your unit can make a surge move of up to D6\"."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "fire-overwatch",
+      "name": "Fire Overwatch",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "avv",
+      "when": "Fine della fase di Movimento avversaria",
+      "it": "Una tua unità non ingaggiata spara in snap shooting: un solo bersaglio visibile entro 24\", colpisce solo con 6 naturali.",
+      "text": "WHEN: End of your opponent’s Movement phase.\nTARGET: One friendly unengaged unit (excluding TITANIC units).\nEFFECT: Your unit shoots using snap shooting (one visible enemy unit within 24\"; each attack only hits on an unmodified 6; no re-rolls to hit)."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "rapid-ingress",
+      "name": "Rapid Ingress",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "movimento"
+      ],
+      "turn": "avv",
+      "when": "Fine della fase di Movimento avversaria (non nel primo round)",
+      "it": "Un'unità in riserva (es. Assault Intercessors con Deep Strike) entra subito con un ingress move.",
+      "text": "WHEN: End of your opponent’s Movement phase.\nTARGET: One friendly unit that is in strategic reserves (excluding AIRCRAFT).\nEFFECT: Your unit makes an ingress move (20.04).\nRESTRICTIONS: You cannot use this stratagem during the first battle round."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "doctrine-devastator",
+      "name": "Devastator Doctrine (se attiva)",
+      "source": "Regola d'armata",
+      "kind": "auto",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Quando spari",
+      "it": "Se hai scelto Devastator: le armi a distanza hanno [ASSAULT] (puoi sparare anche dopo un advance).",
+      "text": "This unit’s ranged attacks have [ASSAULT]."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Land Raider Redeemer"
+      ],
+      "once": null,
+      "id": "explosives",
+      "name": "Explosives",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Tua fase di Tiro",
+      "it": "Un'unità EXPLOSIVES non ingaggiata, che può sparare e non ha fatto advance: scegli un nemico non ingaggiato entro 8\" e visibile, tira 6D6: ogni 4+ = 1 ferita mortale.",
+      "text": "WHEN: Your Shooting phase.\nTARGET: One friendly unengaged EXPLOSIVES/GRENADES unit that is eligible to shoot and did not make an advance move this turn.\nEFFECT: Select one EXPLOSIVES/GRENADES model in your unit. Select one unengaged enemy unit within 8\" of and visible to that model. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "spoor-shoot",
+      "name": "Spoor of the Unholy",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "tiro",
+        "combattimento"
+      ],
+      "turn": "mio",
+      "when": "Tua fase di Tiro o fase di Combattimento, quando un'unità viene scelta per attaccare",
+      "it": "L'unità ignora tutti i modificatori a BS/WS e ai tiri per colpire (utile contro -1 a colpire, o quando sei Damaged).",
+      "text": "WHEN: Your Shooting phase or the Fight phase, when a friendly ADEPTUS ASTARTES unit is selected to attack.\nTARGET: That ADEPTUS ASTARTES unit.\nEFFECT: Your unit can ignore modifiers to your unit’s BS and WS, and hit rolls."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Gladiator Lancer"
+      ],
+      "once": null,
+      "id": "aquilon",
+      "name": "Aquilon Optics",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Quando il Gladiator Lancer spara a MONSTER/VEHICLE",
+      "it": "Può ripetere un tiro per colpire, uno per ferire e uno per i danni.",
+      "text": "This unit’s ranged attacks that target a MONSTER/VEHICLE unit can:\n\n• Re-roll one hit roll.\n• Re-roll one wound roll.\n• Re-roll one damage roll."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Land Raider Redeemer"
+      ],
+      "once": null,
+      "id": "machine-spirit",
+      "name": "Wrath of the Machine Spirit",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Quando il Land Raider spara a un bersaglio entro 12\"",
+      "it": "Le sue armi hanno [DEVASTATING WOUNDS] contro bersagli non MONSTER/VEHICLE entro 12\".",
+      "text": "This unit’s ranged attacks that target a unit within 12\" of this unit have [Devastating Wounds: non-Monster/vehicle]."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "executioner",
+      "name": "Executioner",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Quando il Repulsor Executioner spara",
+      "it": "+1 a colpire contro unità che non sono sotto metà effettivi.",
+      "text": "This unit’s ranged attacks that target a unit not below half-strength have +1 to hit rolls."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Land Raider Redeemer"
+      ],
+      "once": "battaglia",
+      "id": "one-shot",
+      "name": "Hunter-killer Missile (ONE SHOT)",
+      "source": "Arma",
+      "kind": "scelta",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "mio",
+      "when": "Quando il Land Raider spara",
+      "it": "Il missile si può sparare una sola volta per battaglia: 48\", S14, AP-3, D D3+3. Non dimenticarlo contro un veicolo!",
+      "text": "Hunter-killer Missile [ONE SHOT]: 48\" A1 BS2+ S14 AP-3 D D3+3."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Crusader Squad"
+      ],
+      "once": null,
+      "id": "righteous-zeal",
+      "name": "Righteous Zeal",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "avv",
+      "when": "Dopo che un nemico ha sparato e ha distrutto almeno un modello della Crusader Squad",
+      "it": "La Crusader Squad fa un surge move fino a D6+1\" (ottimo per avvicinarsi alla carica).",
+      "text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed by those attacks, this unit can make a surge move of up to D6+1\"."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "smokescreen",
+      "name": "Smokescreen",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "tiro"
+      ],
+      "turn": "avv",
+      "when": "Inizio della fase di Tiro avversaria",
+      "it": "Un'unità SMOKE (Gladiator, Land Raider, Repulsor): fino a fine fase lei e chi è coperto da lei hanno il beneficio della copertura.",
+      "text": "WHEN: Start of your opponent’s Shooting phase.\nTARGET: One friendly SMOKE unit.\nEFFECT: Until the end of the phase, each time an attack targets either your SMOKE unit, or a unit that is not fully visible to the attacking model because of one or more models in your SMOKE unit, the target has the benefit of cover against that attack."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "fervent",
+      "name": "Fervent Exemplars",
+      "source": "Enhancement · Marshal's Household",
+      "kind": "auto",
+      "phases": [
+        "carica"
+      ],
+      "turn": "entrambi",
+      "when": "Quando le Sword Brethren (gruppo di Helbrecht) caricano",
+      "it": "+1 ai tiri di carica.",
+      "text": "SWORD BRETHREN SQUAD unit only. This unit has +1 to charge rolls."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "blade-detestation",
+      "name": "Blade of Detestation",
+      "source": "Stratagemma · Marshal's Household",
+      "kind": "strat",
+      "phases": [
+        "carica"
+      ],
+      "turn": "mio",
+      "when": "Quando una Sword Brethren Squad finisce una carica",
+      "it": "Scegli un nemico ingaggiato: 1D6 per ogni modello ingaggiato con lui, ogni 4+ = 1 ferita mortale (max 6).",
+      "text": "WHEN: Your Charge phase, when a friendly SWORD BRETHREN SQUAD unit ends a charge move.\nTARGET: That SWORD BRETHREN SQUAD.\nEFFECT: Select one enemy unit engaged with your unit. Roll one D6 for each model in your unit engaged with that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds)."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "hammer-wrath",
+      "name": "Hammer of Wrath",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "carica"
+      ],
+      "turn": "entrambi",
+      "when": "Quando gli Assault Intercessors finiscono una carica",
+      "it": "Scegli un nemico ingaggiato: 1D6 per ogni modello ingaggiato con lui, ogni 4+ = 1 ferita mortale.",
+      "text": "When this unit ends a charge move, you can select one enemy unit engaged with this unit. For each model in this unit engaged with that enemy unit, roll one D6:\n\n• On a 4+, that enemy unit suffers 1 mortal wound."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "crushing-impact",
+      "name": "Crushing Impact",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "carica"
+      ],
+      "turn": "mio",
+      "when": "Quando un tuo MONSTER/VEHICLE finisce una carica",
+      "it": "Tira tanti D6 quanto la T del modello: ogni 5+ = 1 ferita mortale al nemico (max 6), ogni 1 = 1 ferita mortale a te.",
+      "text": "WHEN: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a charge move.\nTARGET: That MONSTER/VEHICLE unit.\nEFFECT: Select one enemy unit engaged with your unit. Select one model in your unit engaged with that enemy unit. Roll a number of D6 equal to the T characteristic of that model: for each 1, your unit suffers 1 mortal wound; for each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds per unit)."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Brutalis Dreadnought"
+      ],
+      "once": "fase",
+      "id": "brutalis-charge",
+      "name": "Brutalis Charge",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "carica"
+      ],
+      "turn": "mio",
+      "when": "Quando il Brutalis finisce una carica",
+      "it": "Crushing Impact sul Brutalis costa 1 CP in meno (quindi 0) e non blocca altri usi dello stratagemma nella stessa fase. Con T10: tira 10D6!",
+      "text": "You can target this unit with the Crushing Impact stratagem, regardless of any other uses of that stratagem this phase. If you do:\n\n• That use is -1 CP.\n• That use does not prevent any uses of that stratagem on other units this phase."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "dread-crusaders",
+      "name": "Dread Crusaders",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "carica"
+      ],
+      "turn": "avv",
+      "when": "Un nemico sceglie come bersaglio di carica una tua unità di FANTERIA",
+      "it": "Il nemico che carica deve fare un battle-shock roll con -1.",
+      "text": "WHEN: Your opponent’s Charge phase, when an enemy unit selects charge targets.\nTARGET: One ADEPTUS ASTARTES INFANTRY unit that was selected as a charge target by that enemy unit this phase.\nEFFECT: That enemy unit must make a battle-shock roll, with -1 to that battle-shock roll."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "heroic-intervention",
+      "name": "Heroic Intervention",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "carica"
+      ],
+      "turn": "avv",
+      "when": "Fine della fase di Carica avversaria",
+      "it": "Una tua unità non ingaggiata entro 12\" da nemici carica. Modalità \"Leap to Defend\": solo contro chi ha caricato. Modalità \"Into the Fray\" (+1 CP): carica max 6, puoi scegliere nemici entro 6\". Veicoli solo se CHARACTER/WALKER (il Brutalis sì).",
+      "text": "WHEN: End of your opponent’s Charge phase.\nTARGET: One friendly unengaged unit within 12\" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.\nEFFECT: Resolve a charge with your unit. Before making the charge roll, select one mode:\nLeap to Defend: when selecting charge targets, you can only select enemy units that made a charge move this phase.\nInto the Fray (+1CP): if the charge roll is greater than 6, change it to 6; you can select any enemy units within 6\" of your unit."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht"
+      ],
+      "once": null,
+      "id": "high-marshal",
+      "name": "High Marshal",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Inizio della fase di Combattimento (anche nel turno avversario)",
+      "it": "Scegli un nemico ingaggiato con Helbrecht e tira 1D6: 2-3 = D3 ferite mortali, 4-5 = 3, 6 = D3+3.",
+      "text": "At the start of the Fight phase, select up to one enemy unit engaged with this unit and roll one D6:\n\n• On a 2-3, that enemy unit suffers D3 mortal wounds.\n• On a 4-5, that enemy unit suffers 3 mortal wounds.\n• On a 6+, that enemy unit suffers D3+3 mortal wounds."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "crusade-wrath",
+      "name": "Crusade of Wrath",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Sempre, in mischia",
+      "it": "L'unità di Helbrecht (con le Sword Brethren) ha +1 A e +1 S in mischia.",
+      "text": "This unit’s melee attacks have:\n\n• +1 A.\n• +1 S."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "faith-fuelled",
+      "name": "Faith-fuelled Resolve",
+      "source": "Distaccamento · Marshal's Household",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Fase di Combattimento, se le Sword Brethren sono entro raggio di un obiettivo",
+      "it": "+1 A in mischia per le Sword Brethren vicino a un obiettivo. Vale per entrambe le squadre!",
+      "text": "In the Fight phase, if a friendly SWORD BRETHREN SQUAD unit is within range of an objective, that unit’s melee attacks have +1 A."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Marshal",
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "inspirational",
+      "name": "Inspirational Exemplar",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Sempre, in mischia",
+      "it": "L'unità del Marshal (Sword Brethren da 5) ha +1 a colpire in mischia.",
+      "text": "This unit’s melee attacks have +1 to hit rolls."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Marshal"
+      ],
+      "once": null,
+      "id": "pious-fervour",
+      "name": "Pious Fervour",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando l'unità del Marshal viene scelta per combattere",
+      "it": "Il Marshal ha +1 A per ogni unità nemica entro 6\" (max +3).",
+      "text": "When this unit is selected to fight, you can use this ability. If you do, this model’s melee attacks have +1 A for each enemy unit within 6\" of this model (to a maximum of +3 A)."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Crusade Ancient",
+        "Crusader Squad"
+      ],
+      "once": null,
+      "id": "vengeful",
+      "name": "Vengeful Exhortation",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Fase di Combattimento, prima che l'unità combatta",
+      "it": "Attivala: quando un modello dell'unità del Crusade Ancient muore prima di aver combattuto, con 4+ resta in campo e combatte prima di essere rimosso.",
+      "text": "In the Fight phase, you can use this ability. If you do, when a model in this unit is destroyed, if this unit has not been selected to fight this phase, roll one D6:\n\n• On a 4+, do not remove this model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), this model is removed from the battlefield."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Crusade Ancient"
+      ],
+      "once": "battaglia",
+      "id": "martial-honour",
+      "name": "Martial Honour",
+      "source": "Abilità unità",
+      "kind": "scelta",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Se gli attacchi in mischia dell'unità hanno distrutto un'unità nemica in questa fase",
+      "it": "Una volta per battaglia: il Crusade Ancient ottiene +5 OC fino a fine partita.",
+      "text": "If this unit’s melee attacks destroyed an enemy unit this phase, you can use this ability. If you do, until the end of the battle, this model has +5 OC."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Execrator"
+      ],
+      "once": null,
+      "id": "condemnatory",
+      "name": "Condemnatory Annihilation",
+      "source": "Abilità unità",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Dopo che l'unità dell'Execrator ha combattuto, se ha distrutto almeno un modello",
+      "it": "Ogni nemico ingaggiato fa un battle-shock roll con -1.",
+      "text": "After this unit has fought, if this unit destroyed an enemy model this phase, each enemy unit engaged with this unit makes a battle-shock roll, with -1 to that battle-shock roll."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "vow-challenge",
+      "name": "Accept Any Challenge (se scelto)",
+      "source": "Distaccamento · Templar Vows",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "In mischia, se la T del bersaglio è maggiore della S dell'arma",
+      "it": "Se hai scelto questo voto: +1 a ferire.",
+      "text": "Friendly melee attacks that target a unit with a T greater than this unit’s S have +1 to wound rolls."
+    },
+    {
+      "cp": null,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "vow-witch",
+      "name": "Abhor the Witch (se scelto)",
+      "source": "Distaccamento · Templar Vows",
+      "kind": "auto",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "In mischia contro unità PSYKER",
+      "it": "Se hai scelto questo voto: [PRECISION] e [LANCE] contro i PSYKER.",
+      "text": "This unit’s melee attacks that target a PSYKER unit have [PRECISION] and [LANCE]."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Sword Brethren Squad"
+      ],
+      "once": null,
+      "id": "slayers",
+      "name": "Slayers of Abominations",
+      "source": "Stratagemma · Marshal's Household",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando una Sword Brethren Squad viene scelta per combattere",
+      "it": "+2 S in mischia contro MONSTER/VEHICLE.",
+      "text": "WHEN: Fight phase, when a friendly SWORD BRETHREN SQUAD unit is selected to fight.\nTARGET: That SWORD BRETHREN SQUAD unit.\nEFFECT: Your unit’s melee attacks that target a MONSTER/VEHICLE unit have +2 S."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "emperors-honour",
+      "name": "For the Emperor's Honour!",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando una tua unità di FANTERIA viene scelta per combattere",
+      "it": "Gli attacchi in mischia hanno [PRECISION] (puoi colpire i personaggi nemici).",
+      "text": "WHEN: The Fight phase, when a friendly ADEPTUS ASTARTES INFANTRY unit is selected to fight.\nTARGET: That ADEPTUS ASTARTES INFANTRY unit.\nEFFECT: Your unit’s melee attacks have [PRECISION]."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "Execrator",
+        "Crusader Squad"
+      ],
+      "once": null,
+      "id": "pious-enmity",
+      "name": "Pious Enmity",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando l'unità dell'Execrator (CHAPLAIN) viene scelta per combattere",
+      "it": "Ripeti i tiri per colpire di 1; oppure, contro MONSTER/VEHICLE, ripeti i 1 sia a colpire sia a ferire.",
+      "text": "WHEN: Fight phase, when a friendly CHAPLAIN/JUDICIAR unit is selected to fight.\nTARGET: That CHAPLAIN/JUDICIAR unit.\nEFFECT: Your unit’s melee attacks can re-roll hit rolls of 1. Or: your unit’s melee attacks that target a MONSTER/VEHICLE unit can re-roll hit rolls of 1 and wound rolls of 1."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs"
+      ],
+      "once": null,
+      "id": "devout-push",
+      "name": "Devout Push",
+      "source": "Stratagemma · Vow-sworn Crusaders",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando una tua unità di FANTERIA fa pile-in o consolidamento",
+      "it": "Quel movimento può essere fino a D3+3\" invece del normale.",
+      "text": "WHEN: Fight phase, when a friendly ADEPTUS ASTARTES INFANTRY unit is selected to make a pile-in/consolidation move.\nTARGET: That ADEPTUS ASTARTES INFANTRY unit.\nEFFECT: When making that pile-in/consolidation move, your unit can move up to D3+3\"."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Execrator",
+        "Crusade Ancient",
+        "Marshal"
+      ],
+      "once": null,
+      "id": "epic-challenge",
+      "name": "Epic Challenge",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "entrambi",
+      "when": "Quando un'unità con un CHARACTER viene scelta per combattere",
+      "it": "Un tuo personaggio ottiene [PRECISION] sulle armi da mischia fino a fine fase.",
+      "text": "WHEN: Fight phase, just after a friendly CHARACTER unit is selected to fight.\nTARGET: That CHARACTER unit.\nEFFECT: Select one CHARACTER model in your unit. Until the end of the phase, that model’s melee weapons have the [PRECISION] ability."
+    },
+    {
+      "cp": 2,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "counteroffensive",
+      "name": "Counteroffensive",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "combattimento"
+      ],
+      "turn": "avv",
+      "when": "Fight step avversario, subito dopo che un nemico ha risolto i suoi attacchi",
+      "it": "Una tua unità idonea ottiene Fights First e combatte subito dopo.",
+      "text": "WHEN: Fight step of your opponent’s Fight phase, just after an enemy unit has resolved its attacks.\nTARGET: One friendly unit that is eligible to fight.\nEFFECT: Until the end of the phase, your unit has the Fights First ability and it must be the next unit you select to fight."
+    },
+    {
+      "cp": 1,
+      "units": [
+        "High Marshal Helbrecht",
+        "Sword Brethren Squad",
+        "Execrator",
+        "Crusade Ancient",
+        "Crusader Squad",
+        "Marshal",
+        "Assault Intercessors with Jump Packs",
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "command-reroll",
+      "name": "Command Re-roll",
+      "source": "Stratagemma core",
+      "kind": "strat",
+      "phases": [
+        "sempre"
+      ],
+      "turn": "entrambi",
+      "when": "Qualsiasi fase, subito dopo un tiro",
+      "it": "Ripeti un tiro: advance, carica (tutti i dadi), danni, hazard, colpire, salvezza, ferire o numero di attacchi.",
+      "text": "WHEN: Any phase, just after you make one of the following rolls for a friendly unit or model: Advance roll, Charge roll, Damage roll, Hazard roll, Hit roll, Save roll, Wound roll, a roll to determine the number of attacks generated with a weapon.\nTARGET: That unit or model.\nEFFECT: You re-roll that roll. If you are rolling more than one dice together, select one of those dice to re-roll (excluding charge rolls, which you must re-roll in full)."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "damaged",
+      "name": "Damaged",
+      "source": "Abilità core",
+      "kind": "auto",
+      "phases": [
+        "sempre"
+      ],
+      "turn": "entrambi",
+      "when": "Quando un veicolo scende sotto la soglia di ferite",
+      "it": "-1 a colpire quando danneggiato. Soglia: Brutalis e Gladiator 4 ferite o meno; Land Raider e Repulsor 6 o meno. (Spoor of the Unholy annulla il -1.)",
+      "text": "Damaged X: While a model’s remaining wounds are equal to or less than X, that model is damaged: while damaged, that model’s attacks have -1 to hit rolls."
+    },
+    {
+      "cp": null,
+      "units": [
+        "Brutalis Dreadnought",
+        "Gladiator Lancer",
+        "Land Raider Redeemer",
+        "Repulsor Executioner"
+      ],
+      "once": null,
+      "id": "deadly-demise",
+      "name": "Deadly Demise",
+      "source": "Abilità core",
+      "kind": "auto",
+      "phases": [
+        "sempre"
+      ],
+      "turn": "entrambi",
+      "when": "Quando un veicolo viene distrutto",
+      "it": "Tira 1D6: con 6 ogni unità entro 6\" subisce ferite mortali (D3 Brutalis e Gladiator, D6 Land Raider e Repulsor). Attento alle tue unità vicine!",
+      "text": "Deadly Demise X: Each time a model with this ability is destroyed, after the units embarked within it (if any) have made their emergency disembark moves, roll one D6. On a 6, each unit within 6\" of that model suffers a number of mortal wounds denoted by X."
+    }
+  ]
+}

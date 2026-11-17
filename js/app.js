@@ -16,7 +16,8 @@
   var db = { meta: {}, units: {} };
   var dbIndex = {};
   var dbError = null;
-  var dbReady = loadDatasheets();
+  var fasi = null;
+  var dbReady = Promise.all([loadDatasheets(), loadFasi()]);
   var cache = {}; // id -> risultato del parsing
   var draft = '';
   var lastErrors = null;
@@ -43,6 +44,16 @@
   }
 
   // ---------- dati ----------
+  function loadFasi() {
+    return fetch('data/fasi.json', { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (j) { fasi = j; })
+      .catch(function () { fasi = null; });
+  }
+  function fasiFor(army) {
+    return fasi && army.parsed.header.name === fasi.meta.list ? fasi : null;
+  }
+
   function loadDatasheets() {
     return fetch('data/datasheets.json', { cache: 'no-cache' })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
@@ -132,7 +143,7 @@
   function go(hash) { location.hash = hash; }
   backBtn.addEventListener('click', function () {
     var parts = location.hash.replace(/^#\/?/, '').split('/');
-    if (parts[0] === 'army' && parts[2] === 'u') go('#/army/' + parts[1]);
+    if (parts[0] === 'army' && (parts[2] === 'u' || parts[2] === 'fasi')) go('#/army/' + parts[1]);
     else go('#/liste');
   });
   window.addEventListener('hashchange', route);
@@ -144,6 +155,7 @@
         var army = getArmy(parts[1]);
         if (!army) { toast('Lista non trovata.'); go('#/liste'); return; }
         if (parts[2] === 'u' && parts[3] != null) renderUnit(army, parseInt(parts[3], 10));
+        else if (parts[2] === 'fasi' && fasiFor(army)) renderPhases(army);
         else renderArmy(army);
       } else if (parts[0] === 'liste') {
         renderHome();
@@ -267,6 +279,9 @@
     }
     if (dbError) html += '<div class="notice warn">' + esc(dbError) + '</div>';
 
+    if (fasiFor(army)) {
+      html += '<a class="btn primary block phases-cta" href="#/army/' + esc(army.id) + '/fasi">Fasi di gioco: cosa posso attivare</a>';
+    }
     html += '<input type="search" id="filter" placeholder="Cerca per nome, arma o keyword" value="' + esc(filterText) + '" autocomplete="off" autocapitalize="off">';
 
     if (p.attached.length) {
@@ -456,6 +471,124 @@
   function kwBlock(list) {
     if (!list || !list.length) return '<p class="empty">Nessuna keyword inserita.</p>';
     return '<div class="kw">' + list.map(function (k) { return '<span class="chip">' + esc(k) + '</span>'; }).join('') + '</div>';
+  }
+
+  // ---------- schermata 4: fasi di gioco ----------
+  var KIND_LABEL = { auto: 'Si attiva da sola', scelta: 'Da attivare', strat: 'Stratagemma' };
+  var KIND_ORDER = ['auto', 'scelta', 'strat'];
+  var KIND_TITLE = { auto: 'Si attivano da sole: ricordatele', scelta: 'Da attivare / scegliere', strat: 'Stratagemmi' };
+
+  function renderPhases(army) {
+    var F = fasiFor(army);
+    var view = lsGet('l40k.fasi.view', { phase: 'comando', turn: 'mio' });
+    if (!F.phases.some(function (p) { return p.id === view.phase; })) view.phase = F.phases[0].id;
+    var usedKey = 'l40k.used.' + army.id, cpKey = 'l40k.cp.' + army.id;
+    var used = lsGet(usedKey, {});
+    var cp = lsGet(cpKey, 0);
+    setChrome('Fasi di gioco', true);
+
+    function unitLink(name) {
+      var u = army.flat.find(function (x) { return x.name === name; });
+      return u ? '<a class="chip unit-chip" href="#/army/' + esc(army.id) + '/u/' + u._uid + '">' + esc(name) + '</a>' : '<span class="chip">' + esc(name) + '</span>';
+    }
+    function usedId(r) { return r.id + (r.once === 'battaglia' ? '' : '@' + view.turn); }
+
+    var html = '<section class="card phases-top">';
+    html += '<div class="seg" role="tablist" aria-label="Turno">' +
+      '<button type="button" data-turn="mio" class="' + (view.turn === 'mio' ? 'on' : '') + '">Mio turno</button>' +
+      '<button type="button" data-turn="avv" class="' + (view.turn === 'avv' ? 'on' : '') + '">Turno avversario</button></div>';
+    html += '<div class="phase-tabs" role="tablist" aria-label="Fase">' + F.phases.map(function (p) {
+      var n = rulesFor(p.id).length;
+      return '<button type="button" data-phase="' + p.id + '" class="' + (p.id === view.phase ? 'on' : '') + '">' + esc(p.name) + ' <span class="count">' + n + '</span></button>';
+    }).join('') + '</div>';
+    html += '<div class="cp-row"><span class="muted small">CP</span>' +
+      '<button type="button" class="btn cp-btn" data-cp="-1" aria-label="Togli un CP">−</button><b class="cp-val">' + cp + '</b>' +
+      '<button type="button" class="btn cp-btn" data-cp="1" aria-label="Aggiungi un CP">+</button>' +
+      '<span class="grow"></span><button type="button" class="btn small-btn" id="btn-reset-turn">Nuovo turno</button></div>';
+    html += '</section>';
+
+    function rulesFor(phase) {
+      return F.rules.filter(function (r) {
+        return r.phases.indexOf(phase) !== -1 && (phase === 'inizio' || phase === 'sempre' || r.turn === 'entrambi' || r.turn === view.turn);
+      });
+    }
+
+    var list = rulesFor(view.phase);
+    if (!list.length) html += '<p class="empty">Niente da attivare in questa fase.</p>';
+    KIND_ORDER.forEach(function (k) {
+      var group = list.filter(function (r) { return r.kind === k; });
+      if (!group.length) return;
+      html += '<h2 class="section-title">' + KIND_TITLE[k] + '</h2>';
+      group.forEach(function (r) {
+        var id = usedId(r);
+        var isUsed = !!used[id];
+        html += '<article class="card rule' + (isUsed ? ' used' : '') + '">';
+        html += '<label class="rule-head"><input type="checkbox" data-used="' + esc(id) + '"' + (isUsed ? ' checked' : '') + '>' +
+          '<span class="grow"><b class="rule-name">' + esc(r.name) + '</b>' +
+          '<span class="rule-src">' + esc(r.source) + '</span></span>' +
+          (r.cp != null ? '<span class="cp-badge">' + r.cp + ' CP</span>' : '') + '</label>';
+        html += '<div class="badges"><span class="kind kind-' + r.kind + '">' + KIND_LABEL[r.kind] + '</span>' +
+          (r.turn === 'entrambi' && view.phase !== 'inizio' && view.phase !== 'sempre' ? '<span class="kind">Entrambi i turni</span>' : '') +
+          (r.once === 'battaglia' ? '<span class="kind warn">1 volta per battaglia</span>' : '') +
+          (r.once === 'fase' ? '<span class="kind">1 volta per fase</span>' : '') + '</div>';
+        var when = r.when.replace(/^quando\s+/i, '');
+        html += '<p class="rule-when"><b>Quando:</b> ' + esc(when.charAt(0).toUpperCase() + when.slice(1)) + '</p>';
+        html += '<p class="rule-it">' + esc(r.it) + '</p>';
+        if (r.units && r.units.length && r.units.length < army.flat.length - 1) {
+          html += '<div class="kw rule-units">' + r.units.map(unitLink).join('') + '</div>';
+        }
+        html += '<details><summary>Testo originale</summary><p class="rule-orig">' + esc(r.text) + '</p></details>';
+        html += '</article>';
+      });
+    });
+    html += '<p class="muted small">Spunta le regole già usate. "Nuovo turno" azzera le spunte (non quelle "1 volta per battaglia"); tieni premuto "Nuovo turno" per iniziare una nuova partita.</p>';
+    app.innerHTML = html;
+
+    app.querySelectorAll('[data-turn]').forEach(function (b) {
+      b.addEventListener('click', function () { view.turn = b.dataset.turn; lsSet('l40k.fasi.view', view); renderPhases(army); });
+    });
+    app.querySelectorAll('[data-phase]').forEach(function (b) {
+      b.addEventListener('click', function () { view.phase = b.dataset.phase; lsSet('l40k.fasi.view', view); renderPhases(army); });
+    });
+    var active = app.querySelector('.phase-tabs .on');
+    if (active && active.scrollIntoView) active.scrollIntoView({ block: 'nearest', inline: 'center' });
+    app.querySelectorAll('[data-used]').forEach(function (c) {
+      c.addEventListener('change', function () {
+        if (c.checked) used[c.dataset.used] = true; else delete used[c.dataset.used];
+        lsSet(usedKey, used);
+        c.closest('.rule').classList.toggle('used', c.checked);
+      });
+    });
+    app.querySelectorAll('[data-cp]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        cp = Math.max(0, cp + parseInt(b.dataset.cp, 10));
+        lsSet(cpKey, cp);
+        app.querySelector('.cp-val').textContent = cp;
+      });
+    });
+    var resetBtn = document.getElementById('btn-reset-turn');
+    var pressTimer = null, longPressed = false;
+    function startPress() {
+      longPressed = false;
+      pressTimer = setTimeout(function () {
+        longPressed = true;
+        if (confirm('Nuova partita? Azzera tutte le spunte (anche "1 volta per battaglia") e i CP.')) {
+          lsSet(usedKey, {}); lsSet(cpKey, 0); renderPhases(army); toast('Nuova partita');
+        }
+      }, 700);
+    }
+    function endPress() { clearTimeout(pressTimer); }
+    resetBtn.addEventListener('pointerdown', startPress);
+    resetBtn.addEventListener('pointerup', endPress);
+    resetBtn.addEventListener('pointerleave', endPress);
+    resetBtn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    resetBtn.addEventListener('click', function () {
+      if (longPressed) return;
+      Object.keys(used).forEach(function (k) { if (k.indexOf('@') !== -1) delete used[k]; });
+      lsSet(usedKey, used);
+      renderPhases(army);
+      toast('Spunte del turno azzerate');
+    });
   }
 
   // ---------- avvio ----------

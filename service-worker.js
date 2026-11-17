@@ -3,7 +3,7 @@
  * - App shell: cache-first (aggiorna CACHE_VERSION quando modifichi HTML/CSS/JS).
  * - data/: network-first con fallback alla cache, così i nuovi dati arrivano appena sei online.
  */
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE = 'liste40k-' + CACHE_VERSION;
 const SHELL = [
   './',
@@ -17,6 +17,7 @@ const SHELL = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './data/datasheets.json',
+  './data/fasi.json',
   './data/lista-templari.txt'
 ];
 

@@ -11,6 +11,19 @@ Funziona offline e si installa sull'iPhone con "Aggiungi alla schermata Home".
 > Contengono testo-regole di Games Workshop: tieni il repository **privato** se puoi
 > (vedi "Pubblicare" sotto).
 
+### Fasi di gioco
+
+Nella vista armata c'è il bottone **"Fasi di gioco: cosa posso attivare"**. Scegli *Mio turno* /
+*Turno avversario* e la fase (Inizio battaglia/round, Comando, Movimento, Tiro, Carica,
+Combattimento, In ogni momento): vedi tutte le regole che si applicano in quel momento, divise in
+*Si attivano da sole*, *Da attivare* e *Stratagemmi* (con costo in CP). Per ognuna: quando si usa,
+riassunto in italiano, unità coinvolte (tocca per aprirne la scheda) e testo originale.
+Include regole d'armata (Combat Doctrines, Transhuman Strategist), regole ed enhancement dei
+distaccamenti Marshal's Household e Vow-sworn Crusaders (Templar Vows), i loro stratagemmi, gli
+stratagemmi core e le abilità delle unità della lista. Puoi spuntare ciò che hai già usato e tenere
+il conto dei CP; "Nuovo turno" azzera le spunte, tenendolo premuto inizi una nuova partita.
+I dati sono in `data/fasi.json` (vale solo per la lista chiamata "Templari").
+
 All'apertura l'app carica da sola la lista Templari e mostra subito l'armata: tocca un'unità per
 la sua scheda. Puoi comunque incollare altre liste (freccia indietro → *Liste*): verranno
 raggruppate, ma le unità non presenti nel file dati mostreranno solo nome, punti, equipaggiamento
